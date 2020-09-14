@@ -1,0 +1,12 @@
+#!/bin/env bash
+
+DEFAULT_COUNTRY="Germany"
+
+country="$1"
+
+if [[ -z "${country}" ]]; then
+  country="${DEFAULT_COUNTRY}"
+fi
+
+pacman-mirrors --country="${country}"
+

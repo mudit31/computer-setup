@@ -1,0 +1,4 @@
+#!/bin/env bash
+
+pacman --noconfirm --remove --recursive  palemoon-bin
+

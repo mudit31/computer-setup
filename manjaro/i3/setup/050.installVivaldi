@@ -1,0 +1,7 @@
+#!/bin/env bash
+
+pamac build --no-confirm vivaldi
+pamac build --no-confirm vivaldi-widevine
+pamac build --no-confirm vivaldi-ffmpeg-codecs
+#pamac build --no-confirm vivaldi-codecs-ffmpeg-extra-bin
+
