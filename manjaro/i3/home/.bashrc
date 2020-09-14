@@ -70,9 +70,9 @@ if ${use_color} ; then
 	fi
 
 	if [[ ${EUID} == 0 ]] ; then
-		PS1='\[\033[01;31m\][\h\[\033[01;36m\] \W\[\033[01;31m\]]\$\[\033[00m\] '
+		PS1='\w\[\033[01;31m\] \$\[\033[00m\] '
 	else
-		PS1='\[\033[01;32m\][\u@\h\[\033[01;37m\] \W\[\033[01;32m\]]\$\[\033[00m\] '
+		PS1='\w\[\033[01;32m\] \$\[\033[00m\] '
 	fi
 
 	alias ls='ls --color=auto'
@@ -82,15 +82,15 @@ if ${use_color} ; then
 else
 	if [[ ${EUID} == 0 ]] ; then
 		# show root@ when we don't have colors
-		PS1='\u@\h \W \$ '
+		PS1='\w \$ '
 	else
-		PS1='\u@\h \w \$ '
+		PS1='\w \$ '
 	fi
 fi
 
 unset use_color safe_term match_lhs sh
 
-alias cp="cp -i"                          # confirm before overwriting something
+alias cp="cp -i -v"                       # confirm before overwriting something. also verbose
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
@@ -137,3 +137,4 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
+
