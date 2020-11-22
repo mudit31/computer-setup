@@ -8,6 +8,10 @@ case $- in
       *) return;;
 esac
 
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/github.com
+export PATH=/home/linuxbrew/.linuxbrew/bin:$PATH
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
