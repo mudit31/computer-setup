@@ -8,6 +8,9 @@ if [ -e $HOME/.bash_aliases ]; then
 	source $HOME/.bash_aliases
 fi
 
+eval $(ssh-agent -s)
+ssh-add ~/.ssh/github.com
+
 colors() {
 	local fgc bgc vals seq0
 
